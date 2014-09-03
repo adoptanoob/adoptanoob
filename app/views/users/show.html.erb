@@ -1,5 +1,14 @@
 <h3><%= @user.username %>'s profile</h3>
 
 <% @user.roles.each do |role| %>
-  <%= role.motivation %>
-  <% end %>
+<% unless role.motivation.blank?  %>
+  Motivation: <%= role.motivation %><br />
+<% end %>
+<% end %>
+
+Mes skills:
+<% @user.skills.each do |skill| %>
+ <ul> 
+ <li><%= skill.skill_content %></li>
+ </ul>
+<% end  %>

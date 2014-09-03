@@ -1,4 +1,11 @@
 class RolesController < ApplicationController
+  def index
+    @project = Project.find(params[:project_id])
+    @user = current_user
+    @roles = Role.where(["project_id = ? AND user_id = ?", @project.id, @user.id] )
+   
+  end
+
   def new
     @project = Project.find(params[:project_id])
     @role = Role.new

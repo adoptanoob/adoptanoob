@@ -1,0 +1,5 @@
+<% @roles.each do |role| %>
+  <% role.skills.each do |skill| %>
+    <%= skill.skill_content %>
+  <% end %>
+<% end %>

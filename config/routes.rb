@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do 
+    resources :skills
+  end
   resources :projects do
-  resources :roles, only: [:new, :create]
+    resources :roles, only: [:index, :new, :create] do 
+      resources :skills
+    end
+    resources :skills
   end
   get "/pages/*id" => 'pages#show', as: :page, format: false
   root to: 'pages#show', id: 'home'

@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessor :signin
-  has_many :roles
   has_many :projects, :through => :roles
+  has_many :roles
+  has_many :skills, as: :skilled
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
