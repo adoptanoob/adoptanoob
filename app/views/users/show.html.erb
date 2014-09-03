@@ -1,0 +1,5 @@
+<h3><%= @user.username %>'s profile</h3>
+
+<% @user.roles.each do |role| %>
+  <%= role.motivation %>
+  <% end %>

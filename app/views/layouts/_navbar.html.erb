@@ -1,0 +1,40 @@
+<div class="sticky">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Home", root_path %></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><a href="#">Right Button Active</a></li>
+      <li class="has-dropdown">
+        <% if current_user %>
+        <a href="#">Logged in as <%= current_user.username %></a>
+        <% else %>
+        <a href="#">Log in</a>
+        <% end %>
+        
+        <ul class="dropdown">
+        <% if current_user %>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {confirm: "Are you sure?"} %></li>
+        <% else %>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+          <li class="active"><%= link_to "Sign up", new_user_registration_path %></li>
+        <% end %>
+        </ul>
+
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><%= link_to "See Projects", projects_path %></li>
+    </ul>
+  </section>
+</nav>
+</div>

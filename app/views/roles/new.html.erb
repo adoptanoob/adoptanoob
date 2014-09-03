@@ -1,0 +1,14 @@
+To follow a project, please tell us:<br /> 
+  ??? Role has_many skills???
+  Your project-related skills (check boxes), l'utilisateur se voit proposer les skills du projet tels que remplis par l'owner du projet, et il coche ceux qu'il possède (il faudrait un tableau project has_many skills et user has_many skills)<br />
+  your motivation (text area)<br />
+  mentor/apprentice (select box ou condition : if user.skills >= 75% project.skills = mentor, else = apprentice)<br />
+  submit button
+
+  <%= form_for [@project, @role] do |f| -%>
+  <%= f.label "Your motivation" %>
+  <%= f.text_area :motivation %>
+  <%= f.submit "Enroll!" %>
+    
+  <% end -%>
+

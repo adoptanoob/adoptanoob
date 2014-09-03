@@ -1,0 +1,6 @@
+<%= @project.name %> <%= link_to "Follow Project", new_project_role_path(@project) %><br />
+Created by <%= @project.owner %><br />
+<%= @project.body %><br />
+<% @users.each do |user| %>
+  <%= user.username %>
+<% end %>

@@ -1,0 +1,37 @@
+@import "foundation_and_overrides";
+/* Add imports of custom sass/scss files here */
+.page-layout {
+  padding-right:3.5em;
+  padding-left:3.5em;
+}
+
+#user_signin {
+  width: 15em;
+}
+
+#user_password {
+ width: 15em;
+}
+
+#user_email {
+  width: 15em;
+}
+
+#user_username {
+  width: 15em;
+}
+
+#user_password_confirmation {
+  width: 15em;
+}
+
+.notalertph {
+  padding-left: 2em;
+}
+
+#project_name {
+  width: 15em;
+}
+#project_body {
+  width: 15em;
+}

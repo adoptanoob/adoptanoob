@@ -1,0 +1,16 @@
+<%= link_to "New Project", new_project_path %>
+<% @projects.each do |project| %>
+<div class="container">
+  <h3><%= link_to project.name, project_path(project) %></h3>created by <%= project.owner %><br />
+  <%= project.body %><br />
+    
+    participants: 
+      <ul>
+      <li><%= project.owner %> (Owner)</li>
+      <% project.users.each do |user| %>
+      <li><%= user.username %></li>
+      <% end %>
+      </ul>
+  </div>
+<% end %>
+
