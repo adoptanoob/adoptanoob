@@ -12,6 +12,8 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new    
+    @project.skills.build
+
   end
 
   def edit    
@@ -20,6 +22,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.owner = current_user.username
+    
 
     if @project.save
       flash[:notice] = "Your project has been successfully created."
@@ -43,7 +46,7 @@ class ProjectsController < ApplicationController
       end
 
       def project_params
-        params.require(:project).permit(:name, :body, :owner)
+        params.require(:project).permit(:name, :body, :owner, skills_attributes: [ :id, :skill_content ], roles_attributes: [:id, :project_id])
       end
 end
 

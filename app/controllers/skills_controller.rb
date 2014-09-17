@@ -10,7 +10,10 @@ class SkillsController < ApplicationController
   end
 
   def new
-    @skill = @skilled.skills.new
+    @skill = @skilled.skills.build
+    render partial: "skills/form",
+           locals: { number: params[:number].to_i,
+                     skill: @skill }
 
   end
 

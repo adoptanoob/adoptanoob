@@ -1,0 +1,6 @@
+ <%= fields_for @project do |f| %>
+ <%= f.fields_for :skills, child_index: number do |f_skill| %><br />
+  <%= f_skill.label :skill_content, "#{number += 1}" %><br />
+  <%= f_skill.text_field :skill_content  %>
+  <% end %>
+  <% end %>

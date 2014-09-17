@@ -11,6 +11,13 @@
       <li><%= user.username %></li>
       <% end %>
       </ul>
+        <ul>
+        <% project.skills.each do |skill| %>
+        
+      <li>Skill: <%= skill.skill_content %>, with ID: <%= skill.id %> </li>
+       <% end %>
+      </ul>
+
   </div>
 <% end %>
 

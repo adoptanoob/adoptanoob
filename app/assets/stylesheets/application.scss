@@ -1,5 +1,8 @@
+@import "compass/layout/sticky-footer";
 @import "foundation_and_overrides";
+
 /* Add imports of custom sass/scss files here */
+
 .page-layout {
   padding-right:3.5em;
   padding-left:3.5em;
@@ -34,4 +37,9 @@
 }
 #project_body {
   width: 15em;
+}
+
+@include sticky-footer(25px);
+#footer {background-color: $steel;
+  ul li {display:inline-block;}
 }

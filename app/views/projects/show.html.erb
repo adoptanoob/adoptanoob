@@ -2,5 +2,8 @@
 Created by <%= @project.owner %><br />
 <%= @project.body %><br />
 <% @users.each do |user| %>
-  <%= user.username %>
+  <%= user.username %><br />
 <% end %>
+Select the skills you have from the project's skills.<br />
+<%= collection_check_boxes(@project, :skill_ids, @project.skills, :id, :skill_content) %>
+<%= submit_tag 'Follow' %>

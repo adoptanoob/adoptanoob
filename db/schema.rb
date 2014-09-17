@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903140645) do
+ActiveRecord::Schema.define(version: 20140915113328) do
 
   create_table "projects", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140903140645) do
     t.string   "name"
     t.text     "body"
     t.string   "owner"
+    t.string   "image"
   end
 
   add_index "projects", ["name"], name: "index_projects_on_name"

@@ -1,4 +1,7 @@
 class RolesController < ApplicationController
+
+  before_action :authenticate_user!, only: [:create, :update, :destroy]
+
   def index
     @project = Project.find(params[:project_id])
     @user = current_user
@@ -14,9 +17,11 @@ class RolesController < ApplicationController
   def create
     @role = Role.new(role_params)
     @project = Project.find(params[:project_id])
+    @user = current_user
     
-    if @role.save
-      current_user.roles << @role
+    if @role.save 
+      @user.roles << @role
+    # A FAIRE @role.skills << params[????]
       @project.roles << @role
       flash[:notice] = "You successfully followed this project."
       redirect_to @project

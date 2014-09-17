@@ -9,7 +9,8 @@ gem 'factory_girl_rails'
 gem 'capybara'
 gem 'high_voltage', '~> 2.2.1'
 gem 'foundation-rails'
-
+gem 'compass-rails'
+gem 'carrierwave'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
