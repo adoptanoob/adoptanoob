@@ -23,6 +23,6 @@ test:
 production:
   adapter: postgresql
   database: db/production.sqlite3
-  username: dan
-  password: password
+  username: postgres
+  password: 'sagouin1'
   host: localhost
