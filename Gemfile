@@ -49,4 +49,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 group :production do 
   gem 'pg'
+  gem 'sprockets', '2.11.0'
+  
 end
